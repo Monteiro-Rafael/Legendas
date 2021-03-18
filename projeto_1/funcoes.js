@@ -30,9 +30,22 @@ function lerArquivos(caminhos){
     return Promise.all(caminhos.map(caminho => lerArquivo(caminho)))
 }
 
+function removerSimbolos(simbolos) {
+    return function(array){
+        return array.map(el => {
+            let textoSemSimbolos = el
+            simbolos.forEach(simbolo => {
+                textoSemSimbolos = textoSemSimbolos.split(simbolo).join('')
+            })
+            return textoSemSimbolos
+        })
+    }
+}
+
 
 module.exports = {
     lerDiretorio, 
     lerArquivos,
+    removerSimbolos
     
 }
