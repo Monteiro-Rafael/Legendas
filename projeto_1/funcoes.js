@@ -30,6 +30,9 @@ function lerArquivos(caminhos){
     return Promise.all(caminhos.map(caminho => lerArquivo(caminho)))
 }
 
+
 module.exports = {
-    lerDiretorio, lerArquivos
+    lerDiretorio, 
+    lerArquivos,
+    
 }
